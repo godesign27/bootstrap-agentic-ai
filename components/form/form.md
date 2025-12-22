@@ -17,6 +17,24 @@ Dropdown select menus for choosing from a list of options.
 ### Checkbox (`checkbox.html`)
 Checkbox inputs for single or multiple selections.
 
+### Radio (`radio.html`)
+Radio button inputs for single selection from a group of options.
+
+### Switch (`switch.html`)
+Toggle switch inputs (styled checkboxes) for on/off settings.
+
+### Range (`range.html`)
+Range slider inputs for selecting numeric values within a range.
+
+### Input Group (`input-group.html`)
+Inputs with addons (text, buttons, icons) on the left or right.
+
+### Floating Labels (`floating-labels.html`)
+Inputs with labels that float above when focused or filled.
+
+### Validation (`validation.html`)
+Form inputs with validation states and feedback messages.
+
 ## Common Structure
 
 All form components follow this pattern:
@@ -63,6 +81,53 @@ All form components follow this pattern:
 3. **Use `form-check-label`**: Label should have `form-check-label` class
 4. **Grouping**: For multiple checkboxes, use same `name` attribute to group them
 5. **Fieldset for groups**: Consider using `<fieldset>` and `<legend>` for checkbox groups
+
+### Radio-Specific Rules
+
+1. **Use `form-check` wrapper**: Wrap radio and label in `<div class="form-check">`
+2. **Same name attribute**: All radio buttons in a group must share the same `name` attribute
+3. **One selected by default**: Use `checked` attribute on one option (recommended)
+4. **Unique IDs**: Each radio button must have a unique `id`
+5. **Fieldset for groups**: Use `<fieldset>` and `<legend>` for radio groups
+
+### Switch-Specific Rules
+
+1. **Use `form-switch` class**: Add `form-switch` to `form-check` wrapper
+2. **Role attribute**: Include `role="switch"` on checkbox input
+3. **Label after input**: Place label after the switch input
+4. **Use for toggles**: Best for on/off settings, not for multiple selections
+
+### Range-Specific Rules
+
+1. **Use `form-range` class**: Not `form-control`
+2. **Min and max attributes**: Always specify `min` and `max` values
+3. **Value attribute**: Set initial `value` attribute
+4. **Label required**: Always include a label describing the range
+5. **Display value**: Consider showing current value to user (via JavaScript)
+
+### Input Group-Specific Rules
+
+1. **Use `input-group` wrapper**: Wrap input and addons in `<div class="input-group">`
+2. **Use `input-group-text`**: For text addons (icons, prefixes, suffixes)
+3. **Button addons**: Can use buttons instead of text spans
+4. **Multiple addons**: Can have addons on both sides
+5. **Labels**: Place label outside the input-group
+
+### Floating Label-Specific Rules
+
+1. **Use `form-floating` wrapper**: Wrap input and label in `<div class="form-floating">`
+2. **Label after input**: Label comes after the input in HTML (appears above when floating)
+3. **Placeholder required**: Input must have `placeholder` attribute
+4. **Height for textarea**: Set explicit `height` style on textareas
+5. **Works with**: Input, textarea, and select elements
+
+### Validation-Specific Rules
+
+1. **Use `is-valid` or `is-invalid`**: Add to form control class
+2. **Feedback messages**: Use `valid-feedback` or `invalid-feedback` divs
+3. **Accessibility**: Feedback messages are automatically associated with inputs
+4. **Dynamic application**: Typically applied via JavaScript after validation
+5. **Both states**: Can show both valid and invalid states in a form
 
 ## Variants
 
