@@ -37,3 +37,33 @@ Each component in `/components/<component>/` includes:
 - Do NOT add custom CSS outside of `/styles/tokens.css` and `/styles/overrides.css`
 - Do NOT remove or modify `/bootstrap-5.3.8-dist/` folder
 - Do NOT install npm dependencies or create package.json
+
+---
+
+## Using this repo with Agentic AI tools
+
+This repository is optimized for AI agents to build consistent Bootstrap-based web pages. Follow these guidelines:
+
+### Workflow
+
+1. **Start with App Shell**: Always begin with `/assets/app-shell.html` as your base template
+2. **Reference Index**: Consult `/COMPONENTS_INDEX.md` for complete inventory of components, patterns, and examples
+3. **Use Patterns**: Reference `/patterns/` for multi-component UX recipes (dashboard, marketing, CRUD, etc.)
+4. **Study Examples**: Review `/examples/` for complete page implementations
+5. **Copy Components**: Use snippets from `/components/<component>/<component>.html`
+6. **Read Documentation**: Always check component `.md` files for usage rules, variants, and accessibility requirements
+
+### Available Resources
+
+- **Components**: 30+ Bootstrap components with HTML snippets and documentation
+- **Patterns**: 9 UX patterns for common layouts and interactions
+- **Examples**: 9 complete runnable HTML pages demonstrating real-world usage
+
+### Key Principles
+
+- **Composition Only**: Copy and combine components, don't modify component files
+- **Bootstrap First**: Prefer Bootstrap utility classes over custom CSS
+- **Accessibility Required**: All components include ARIA attributes and keyboard navigation
+- **CDN Only**: Bootstrap loaded via CDN, no build tools or npm dependencies
+
+For detailed rules and guidelines, see `/AGENT_RULES.md`.
