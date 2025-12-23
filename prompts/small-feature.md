@@ -6,16 +6,50 @@ You are working in the repository: bootstrap-agentic-ai.
 
 ## Constraints
 
-- Do NOT invent new components. Use existing components from `/components/`.
-- Do NOT infer requirements. Ask for clarification if needed.
-- Reference component documentation in `/components/<component>/<component>.md` before implementation.
-- Follow AGENT_RULES.md: composition only, no modification of component files.
+1. **Composition Only**
+   - Copy and combine existing components from `/components/`
+   - Do NOT modify component files
+   - Do NOT create new components
+   - Components are closed-world: only use what exists
+
+2. **Framework-Agnostic Rules**
+   - Reference AGENT_RULES.md for composition rules
+   - Reference COMPONENTS_INDEX.md for available components
+   - Reference component documentation: `/components/<component>/<component>.md`
+   - Do NOT duplicate governance content
+
+3. **Accessibility Enforcement**
+   - WCAG 2.1 AA compliance required
+   - Reference ACCESSIBILITY.md for requirements
+   - Verify semantic HTML, ARIA attributes, keyboard navigation
+
+4. **Complexity Limits**
+   - Single component or tightly scoped feature only
+   - If scope exceeds single component, use medium-feature.md instead
+   - Do NOT infer requirements beyond stated scope
+
+## Required Checks
+
+- [ ] Component usage: Only used components from `/components/`
+- [ ] No component modification: Did not modify component files
+- [ ] Accessibility: WCAG 2.1 AA compliance verified
+- [ ] Scope validation: Feature remains within single component scope
+
+## Workflow
+
+1. Identify component(s) from COMPONENTS_INDEX.md
+2. Read component documentation for usage rules
+3. Copy component snippet(s) from `/components/<component>/<component>.html`
+4. Compose within app shell structure (`/assets/app-shell.html`)
+5. Verify accessibility compliance
+6. Output structured summary
 
 ## Output Format
 
-1. Component(s) used: [list]
+1. Component(s) used: [list from COMPONENTS_INDEX.md]
 2. File(s) created/modified: [list]
-3. Implementation: [concise description]
+3. Accessibility verification: [brief notes]
+4. Implementation summary: [concise description]
 
 ## Deliverable
 
