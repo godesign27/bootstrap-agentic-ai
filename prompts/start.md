@@ -49,6 +49,32 @@ Before any future generation:
 Do not invent components or patterns.
 
 ────────────────────────────────
+FALLBACK (IF REPO CANNOT BE INDEXED)
+
+If your tool cannot locate or index the repository via standard GitHub browsing,
+do NOT assume the repo is missing.
+
+Instead, fetch these canonical RAW file URLs directly:
+
+- README.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/README.md
+- AGENT_RULES.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/AGENT_RULES.md
+- COMPONENTS_INDEX.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/COMPONENTS_INDEX.md
+- DESIGN_PRINCIPLES.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/DESIGN_PRINCIPLES.md
+- ACCESSIBILITY.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/ACCESSIBILITY.md
+- TOKENS_REFERENCE.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/TOKENS_REFERENCE.md
+- BRAND_THEMING.md:
+  https://raw.githubusercontent.com/godesign27/agentic-ui-bootstrap/main/BRAND_THEMING.md
+
+If RAW URLs also cannot be fetched, STOP and report:
+“Environment cannot access GitHub content; cannot load governance.”
+Do not generate UI.
+────────────────────────────────
 STEP 2 — COMPATIBILITY CHECK (MANDATORY)
 
 Determine whether your environment can support:
