@@ -1,0 +1,47 @@
+{
+  "prompts": [
+    {
+      "id": "start",
+      "title": "Start / Initialize",
+      "category": "Getting Started",
+      "description": "Universal entry prompt for initializing project context in any Agentic AI tool.",
+      "file": "/prompts/start.md"
+    },
+    {
+      "id": "small-feature",
+      "title": "Small Feature",
+      "category": "Building Features",
+      "description": "Template for single component or tightly scoped UI features.",
+      "file": "/prompts/small-feature.md"
+    },
+    {
+      "id": "medium-feature",
+      "title": "Medium Feature",
+      "category": "Building Features",
+      "description": "Template for multi-component or single-page features.",
+      "file": "/prompts/medium-feature.md"
+    },
+    {
+      "id": "large-feature",
+      "title": "Large Feature",
+      "category": "Building Features",
+      "description": "Template for complex or multi-page features with UI/backend separation.",
+      "file": "/prompts/large-feature.md"
+    },
+    {
+      "id": "brand-setup",
+      "title": "Brand Setup",
+      "category": "Theming",
+      "description": "Generate deterministic color scales (50-900) from base brand colors as CSS tokens.",
+      "file": "/prompts/brand-setup.md"
+    },
+    {
+      "id": "changelog-prompt",
+      "title": "Changelog Update",
+      "category": "Project Notes",
+      "description": "Post-change documentation mode for updating project annotations and changelog.",
+      "file": "/prompts/changelog_prompt.md"
+    }
+  ]
+}
+
