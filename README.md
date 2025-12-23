@@ -1,5 +1,20 @@
 # bootstrap
 
+## About This Repository
+
+- This repo is an implementation of the Agentic AI UI Control System using Bootstrap 5.3.8 (CDN).
+- The core governance/instruction layer lives in the separate repo: agentic-ai-ui-control-system.
+- Users should consult the core repo first for system rules and governance, then use this repo for Bootstrap components, patterns, and examples.
+
+### Read Order (Recommended)
+
+1. Core repo README + AGENT_RULES
+2. This repo COMPONENTS_INDEX
+3. Component-level docs
+4. Patterns/examples
+
+---
+
 ## Instruction Layer (Read This First)
 
 Before using this repository, read the root-level instruction files in this order:
