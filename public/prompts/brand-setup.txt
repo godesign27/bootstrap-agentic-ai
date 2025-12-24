@@ -8,18 +8,19 @@ You are working in the repository: bootstrap-agentic-ai.
 
 1. **Token-Only Output**
    - Write colors ONLY as CSS custom properties in `/styles/tokens.css` or `/styles/brand.css`
-   - Do NOT generate UI components
+   - Do NOT generate UI components (except required Brand Preview page)
    - Do NOT modify component files
-   - Do NOT create HTML files
    - Do NOT add inline styles
 
-2. **Deterministic Color Scale Generation**
-   - Generate full color scales (50, 100, 200, 300, 400, 500, 600, 700, 800, 900) from base color inputs
+2. **Deterministic Color Scale Generation (50-900 Scales Required)**
+   - Generate full color scales: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 from base color inputs
+   - ALL scales (50-900) must be generated for each provided base color
    - Use deterministic, non-subjective algorithms (HSL manipulation)
    - Base color (500) = provided input color
    - Lighter shades (50-400): Increase lightness, maintain hue and saturation
    - Darker shades (600-900): Decrease lightness, maintain hue and saturation
    - Ensure WCAG 2.1 AA contrast ratios where applicable
+   - Write all scales as CSS custom properties (tokens), not hard-coded into components
 
 3. **Color Scale Algorithm Rules**
    - Convert base color to HSL
@@ -49,11 +50,28 @@ Provide base brand colors:
 - Accent brand color (hex): [e.g., #198754]
 - Highlight/Warn brand color (hex): [e.g., #dc3545]
 
+## Brand Preview Page (Required)
+
+Create `/start/brand-preview.html` as a visual verification page.
+
+This page must:
+- Render a simple preview UI of all brand tokens:
+  - `--brand-*` scales (50-900) for primary color
+  - `--brand-secondary-*` scales (50-900) if secondary colors are provided
+  - `--brand-accent-*` scales (50-900) if accent color is provided
+  - `--brand-highlight-*` scales (50-900) if highlight color is provided
+- Show swatches + token name + hex value (computed from CSS or displayed as text in markup)
+- Include light/dark preview guidance if theming supports it
+- Be usable as a quick visual verification page (no build tools required)
+- Use static HTML with CSS custom properties
+
+The preview page serves as visual verification that all color scales are correctly generated and accessible.
+
 ## Required Checks
 
 - [ ] Color scales generated: All scales (50-900) created for each base color
 - [ ] Token format: Colors written as CSS custom properties only
-- [ ] No UI generated: No HTML, components, or UI files created
+- [ ] Brand Preview page created: `/start/brand-preview.html` exists and displays all scales
 - [ ] No component modification: Component files remain unchanged
 - [ ] Deterministic algorithm: Color scales use consistent HSL manipulation
 - [ ] File location: Colors written to `/styles/brand.css` (create if needed)
@@ -69,15 +87,17 @@ Provide base brand colors:
    e. Convert HSL back to hex
 3. Write all color scales as CSS custom properties to `/styles/brand.css`
 4. Maintain existing `--brand`, `--brand-2`, `--brand-3`, `--brand-4` variables (map to 500 scale)
-5. Output structured summary
+5. Create Brand Preview page at `/start/brand-preview.html` displaying all generated scales
+6. Output structured summary
 
 ## Output Format
 
 1. Base colors received: [list of 4 hex colors]
-2. Color scales generated: [confirmation for each color]
+2. Color scales generated: [confirmation for each color with 50-900 scales]
 3. File created/modified: `/styles/brand.css`
-4. Token variables created: [count of variables]
-5. Implementation summary: [concise description]
+4. Brand Preview page created: `/start/brand-preview.html`
+5. Token variables created: [count of variables]
+6. Implementation summary: [concise description]
 
 ## Deliverable
 
@@ -111,6 +131,22 @@ CSS custom properties file (`/styles/brand.css`) containing:
     /* Additional scales for brand-2, brand-3, brand-4... */
 }
 ```
+
+## Optional: Prompt Library Integration (Non-Blocking)
+
+If a Prompt Library drawer exists in this project:
+- Add an entry to PROMPTS_INDEX.json under a "Theming" category
+- The entry should reference the Brand Setup prompt itself
+- The goal is discoverability, not execution
+
+Rules:
+- This step is optional
+- Do NOT fail the task if the Prompt Library does not exist
+- Do NOT modify drawer UI or behavior
+- Do NOT duplicate entries
+
+Purpose:
+Make Brand Setup discoverable alongside other system prompts without coupling branding to UI generation.
 
 After completing this task, execute /prompts/changelog_prompt.md.
 
