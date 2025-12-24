@@ -154,7 +154,7 @@ This repository includes an out-of-the-box Prompt Library drawer that provides q
 
 2. **Open in browser**:
    ```
-   http://localhost:8080/start/
+   http://localhost:8080/
    ```
 
 3. **Use shortcuts**:
@@ -171,4 +171,4 @@ This repository includes an out-of-the-box Prompt Library drawer that provides q
 - Keyboard accessible with focus trap
 - Works with static HTML (no build tools)
 
-The Prompt Library is located at `/start/index.html` and uses assets from `/public/assets/prompt-drawer/`.
+The Prompt Library demo page is located at `/index.html` (root) and uses assets from `/public/assets/prompt-drawer/`.
