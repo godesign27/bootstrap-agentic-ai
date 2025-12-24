@@ -6,6 +6,39 @@
 - The core governance/instruction layer lives in the separate repo: agentic-ai-ui-control-system.
 - Users should consult the core repo first for system rules and governance, then use this repo for Bootstrap components, patterns, and examples.
 
+---
+
+## Quick Start
+
+### Get the Repository Running
+
+1. **Clone or download this repository**:
+   ```bash
+   git clone https://github.com/godesign27/agentic-ui-bootstrap.git
+   cd agentic-ui-bootstrap
+   ```
+
+2. **Start a local web server** (required for Prompt Library):
+   ```bash
+   python3 -m http.server 8080
+   ```
+   *Note: The Prompt Library requires a web server; it won't work with `file://` protocol.*
+
+3. **Open the default page in your browser**:
+   ```
+   http://localhost:8080/
+   ```
+
+4. **Access the Prompt Library**:
+   - Click the "Prompt Library ⌘L" button, or
+   - Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux), or
+   - Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) as fallback
+
+The default page (`/index.html`) includes:
+- A "Hello World" welcome page
+- Integrated Prompt Library drawer with all available prompts
+- Keyboard shortcuts for quick access
+
 ### Read Order (Recommended)
 
 1. Core repo README + AGENT_RULES
