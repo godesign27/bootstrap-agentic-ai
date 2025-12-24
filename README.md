@@ -138,3 +138,37 @@ This library includes a **token-based brand theming system** that allows you to 
 - **[/styles/brand.template.css](./styles/brand.template.css)** - Template file to copy
 
 The brand theming system supports both light and dark modes via Bootstrap's `data-bs-theme` attribute.
+
+---
+
+## Prompt Library Demo
+
+This repository includes an out-of-the-box Prompt Library drawer that provides quick access to all prompts.
+
+### Quick Start
+
+1. **Start a local server**:
+   ```bash
+   python3 -m http.server 8080
+   ```
+
+2. **Open in browser**:
+   ```
+   http://localhost:8080/start/
+   ```
+
+3. **Use shortcuts**:
+   - Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux) to open the drawer
+   - Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) as fallback
+   - Press `ESC` to close or return to list
+   - Click the "Open Prompt Library" button
+
+### Features
+
+- Browse prompts organized by category as cards
+- Click any card to view full prompt content in takeover view
+- Copy prompts to clipboard with one click
+- Keyboard accessible with focus trap
+- Works with static HTML (no build tools)
+
+The Prompt Library is located at `/start/index.html` and uses assets from `/public/assets/prompt-drawer/`.
