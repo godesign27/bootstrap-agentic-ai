@@ -249,7 +249,12 @@ class PromptDrawer {
     // Content area
     const contentArea = document.createElement('div');
     contentArea.className = 'prompt-drawer-detail-content';
-    contentArea.innerHTML = '<div class="prompt-drawer-loading">Loading prompt...</div>';
+    
+    // Loading indicator
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'prompt-drawer-loading';
+    loadingDiv.textContent = 'Loading prompt...';
+    contentArea.appendChild(loadingDiv);
 
     // Description
     const description = document.createElement('div');
@@ -271,9 +276,6 @@ class PromptDrawer {
     
     copyButtonContainer.appendChild(copyButton);
 
-    contentArea.appendChild(description);
-    contentArea.appendChild(promptContent);
-
     this.detailView.appendChild(header);
     this.detailView.appendChild(contentArea);
     this.detailView.appendChild(copyButtonContainer);
@@ -285,12 +287,26 @@ class PromptDrawer {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const text = await response.text();
+      
+      // Remove loading indicator
+      loadingDiv.remove();
+      
+      // Add description and content
+      contentArea.appendChild(description);
+      contentArea.appendChild(promptContent);
       promptContent.textContent = text;
       
       // Update copy button to use loaded content
       copyButton.onclick = () => this.copyPrompt(text, copyButton);
     } catch (error) {
       console.error('Failed to load prompt:', error);
+      
+      // Remove loading indicator
+      loadingDiv.remove();
+      
+      // Add description and error content
+      contentArea.appendChild(description);
+      contentArea.appendChild(promptContent);
       promptContent.textContent = `Error: Failed to load prompt from ${prompt.file}\n\nServe via a local web server; file:// won't work.`;
     }
 
