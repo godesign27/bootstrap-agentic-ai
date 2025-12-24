@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Library Demo</title>
+    <link rel="stylesheet" href="/assets/prompt-drawer/prompt-drawer.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #212529;
+        }
+        h1 {
+            margin-top: 0;
+            color: #212529;
+        }
+        .demo-section {
+            background-color: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.375rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .demo-button {
+            background-color: #0d6efd;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .demo-button:hover {
+            background-color: #0b5ed7;
+        }
+        .demo-button:focus {
+            outline: 2px solid #0d6efd;
+            outline-offset: 2px;
+        }
+        .hotkey-hint {
+            background-color: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+            font-size: 0.875rem;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prompt Library Demo</h1>
+    
+    <p>
+        This page demonstrates the Prompt Library drawer component. The drawer provides quick access
+        to all prompts in the repository, organized by category.
+    </p>
+
+    <div class="demo-section">
+        <h2>How to Use</h2>
+        <p>
+            <strong>Keyboard Shortcut:</strong> Press 
+            <span class="hotkey-hint">Cmd+L</span> (Mac) or 
+            <span class="hotkey-hint">Ctrl+L</span> (Windows/Linux) 
+            to open the Prompt Library drawer.
+        </p>
+        <p>
+            <strong>Or click the button below:</strong>
+        </p>
+        <button class="demo-button" onclick="window.promptDrawer.open()">
+            Open Prompt Library
+        </button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Features</h2>
+        <ul>
+            <li>Browse prompts organized by category</li>
+            <li>View full prompt content in a readable format</li>
+            <li>Copy prompts to clipboard with one click</li>
+            <li>Keyboard accessible (ESC to close, Tab to navigate)</li>
+            <li>Focus trap when drawer is open</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>Adding to Your Project</h2>
+        <p>To add the Prompt Library drawer to any HTML page, include these two lines:</p>
+        <pre><code>&lt;link rel="stylesheet" href="/assets/prompt-drawer/prompt-drawer.css"&gt;
+&lt;script type="module" src="/assets/prompt-drawer/prompt-drawer.js"&gt;&lt;/script&gt;</code></pre>
+        <p>
+            <strong>Note:</strong> This must be served via a local web server (not <code>file://</code> protocol)
+            due to browser security restrictions for fetching JSON and markdown files.
+        </p>
+    </div>
+
+    <div class="demo-section">
+        <h2>Available Prompts</h2>
+        <p>The Prompt Library includes:</p>
+        <ul>
+            <li><strong>Getting Started:</strong> Start / Initialize</li>
+            <li><strong>Building Features:</strong> Small Feature, Medium Feature, Large Feature</li>
+            <li><strong>Theming:</strong> Brand Setup</li>
+            <li><strong>Project Notes:</strong> Changelog Update</li>
+        </ul>
+    </div>
+
+    <!-- Prompt Drawer -->
+    <link rel="stylesheet" href="/assets/prompt-drawer/prompt-drawer.css">
+    <script type="module" src="/assets/prompt-drawer/prompt-drawer.js"></script>
+</body>
+</html>
+
